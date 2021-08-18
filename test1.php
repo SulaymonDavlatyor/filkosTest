@@ -37,16 +37,13 @@ $queryOrders = "INSERT INTO `orderhistory` (`order_id`, `product_id`, `customer_
                 VALUES (NULL, '1', '2'), (NULL, '4', '2'),(NULL, '2', '2'),(NULL, '3', '2'),
                        (NULL, '1', '3'),(NULL, '1', '4'),(NULL, '3', '1')";
 
-//$mysqli->query($queryProducts);
-//$mysqli->query($queryCustomers);
-//$mysqli->query($queryOrders);
-
-//$querySelect = "SELECT FROM `orderhistory` WHERE COUNT()";
+$mysqli->query($queryProducts);
+$mysqli->query($queryCustomers);
+$mysqli->query($queryOrders);
 
 $querySelect = "SELECT customer_id, count(*)
                 FROM orderhistory
-                GROUP BY customer_id
-";
+                GROUP BY customer_id";
 
 $result_set = $mysqli->query($querySelect);
 
@@ -77,7 +74,7 @@ $tableRes = [];
 while(($row = $result_set->fetch_assoc()) != false){
     $tableRes[] = $row;
 }
-
+print_r($tableRes);
 
 $mysqli->close();
 
