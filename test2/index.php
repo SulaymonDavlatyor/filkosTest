@@ -1,6 +1,6 @@
 <?php
 require_once('db_connect.php');
-
+//подобие маршрутизатора либо выведет форму либо перенесет по сокращенной ссылке
 if($_GET['URL'] == 'localhost/main'){
     readfile('index.html');
 }else{
