@@ -3,7 +3,7 @@ require_once('db_connect.php');
 
 $url = $_POST['URL'];
 $urlShort = "";
-
+//сокращает сссылку и заносит в бд так же проверяет нет ли дубликата
 do {
     for ($i = 0; $i < 7; $i++) {
         $letter = chr(rand(65, 90));
